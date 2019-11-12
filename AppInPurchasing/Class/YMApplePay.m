@@ -111,7 +111,7 @@
 
 #pragma mark - SKProductsRequestDelegate
 // 交易结束
-- (void)completeTransaction:(SKPaymentTransaction *)transaction{
+- (void)completeTransaction:(SKPaymentTransaction *)transaction {
     // Your application should implement these two methods.
     NSString * productIdentifier = transaction.payment.productIdentifier;
     NSData *data = [productIdentifier dataUsingEncoding:NSUTF8StringEncoding];
@@ -139,7 +139,6 @@
         //这里缓存receipt_data，transaction_id 因为后端做校验的时候需要用到这两个字段
         YMLog(@"%@",receipt_data);
         YMLog(@"%@",transaction_id);
-        
         
         [self retquestApplePay:receipt_data transaction_id:transaction_id goodsID:goodID];
     }
